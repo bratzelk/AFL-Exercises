@@ -6,9 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.afl.exercises.children.ChildrenGame;
-import com.afl.exercises.children.ChildrenGameImpl;
 import com.afl.exercises.number.NumberIterator;
-import com.afl.exercises.number.NumberIteratorImpl;
 
 public class ExerciseRunner {
 
@@ -16,11 +14,6 @@ public class ExerciseRunner {
 
     private ChildrenGame childrenGame;
     private NumberIterator numberIterator;
-
-    public ExerciseRunner() {
-        this.childrenGame = new ChildrenGameImpl();
-        this.numberIterator = new NumberIteratorImpl();
-    }
 
     public ExerciseRunner(ChildrenGame childrenGame, NumberIterator numberIterator) {
         this.childrenGame = childrenGame;

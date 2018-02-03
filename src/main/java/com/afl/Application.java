@@ -1,7 +1,12 @@
 package com.afl;
 
+import static java.lang.Integer.parseInt;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.afl.exercises.children.ChildrenGameImpl;
+import com.afl.exercises.number.NumberIteratorImpl;
 
 /**
  * A Java app
@@ -14,23 +19,24 @@ public class Application {
     private static final String USAGE = "Usage: java -jar ./target/AFLExercise-1.0.0-SNAPSHOT-jar-with-dependencies.jar (children|number) n k";
 
     public static void main(String[] args) {
-        run(args);
+        ExerciseRunner runner = new ExerciseRunner(new ChildrenGameImpl(), new NumberIteratorImpl());
+        run(runner, args);
     }
 
     /*
-     * Horribly oversimplified argument parsing and running
+     * Extremely oversimplified argument parsing and running.
      */
-    public static void run(String[] args) {
+    public static void run(ExerciseRunner runner, String[] args) {
         LOG.info("*** AFL Exercises Runner ***");
-        ExerciseRunner runner = new ExerciseRunner();
-
         try {
             if ("children".equalsIgnoreCase(args[0])) {
-                Integer n = Integer.parseInt(args[1]);
-                Integer k = Integer.parseInt(args[2]);
+                LOG.info("*** Children's Game ***");
+                Integer n = parseInt(args[1]);
+                Integer k = parseInt(args[2]);
                 runner.runChildrenGame(n, k);
             } else if ("number".equalsIgnoreCase(args[0])) {
-                Integer limit = Integer.parseInt(args[1]);
+                LOG.info("*** Number Iterator ***");
+                Integer limit = parseInt(args[1]);
                 runner.runNumberIterator(limit);
             } else {
                 LOG.error(USAGE);
