@@ -1,13 +1,17 @@
 # AFL Exercises
-========
+
+## Requirements
+
+* Java 1.8
+* Maven
 
 ## Build
 
-```mvn clean install```
+```mvn clean install``` to build the application and run the tests.
 
 or
 
-```mvn clean install -Dmaven.test.skip=true```
+```mvn clean install -Dmaven.test.skip=true``` to build without the tests.
 
 
 ## Run
@@ -18,9 +22,9 @@ or
 
 ```java -jar ./target/AFLExercise-1.0.0-SNAPSHOT-jar-with-dependencies.jar Exercise arg1 arg2```
 
-Where Exercise is either ```children``` or ```number```
+Where ```Exercise``` is either ```children``` or ```number``` to run either the Children Game or Number Iterator respectively.
 
-##Examples
+## Examples
 
 ### Children Game with n=2 and k=3
 ```mvn exec:java -Dexec.args="children 2 3"```
