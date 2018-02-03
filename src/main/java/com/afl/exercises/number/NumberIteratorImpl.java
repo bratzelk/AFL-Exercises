@@ -1,16 +1,12 @@
 package com.afl.exercises.number;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class NumberIteratorImpl implements NumberIterator {
-
-    private static final Logger LOG = LoggerFactory.getLogger(NumberIteratorImpl.class);
 
     public List<String> iterate(Integer limit) {
         if (limit < 0) {
@@ -27,7 +23,7 @@ public class NumberIteratorImpl implements NumberIterator {
                 .mapToObj(this::convert) // Convert them
                 .filter(Optional::isPresent) // Remove any empty values
                 .map(Optional::get)
-                .collect(Collectors.toList());
+                .collect(toList());
 
     }
 

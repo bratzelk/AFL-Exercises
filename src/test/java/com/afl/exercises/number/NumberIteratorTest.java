@@ -6,12 +6,8 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class NumberIteratorTest {
-
-    private static final Logger LOG = LoggerFactory.getLogger(NumberIteratorTest.class);
 
     private NumberIterator unitUnderTest;
     private Integer limit;

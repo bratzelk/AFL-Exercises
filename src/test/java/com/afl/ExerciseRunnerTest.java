@@ -1,6 +1,9 @@
 package com.afl;
 
+import static java.util.Arrays.asList;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -31,6 +34,9 @@ public class ExerciseRunnerTest {
     @Before
     public void beforeEach() {
         unitUnderTest = new ExerciseRunner(childrenGame, numberIterator);
+
+        when(childrenGame.play(anyInt(), anyInt())).thenReturn(asList(1, 2, 3));
+        when(numberIterator.iterate(anyInt())).thenReturn(asList("", ""));
     }
 
     @Test
