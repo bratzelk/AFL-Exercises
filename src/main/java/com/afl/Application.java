@@ -9,10 +9,12 @@ import com.afl.exercises.children.ChildrenGameImpl;
 import com.afl.exercises.number.NumberIteratorImpl;
 
 /**
- * A Java app
+ * A simple command line runner for the AFL Exercises. See README.md for
+ * instructions.
+ * 
+ * By Kim Bratzel 2018
  *
  */
-
 public class Application {
 
     private static final Logger LOG = LoggerFactory.getLogger(Application.class);
