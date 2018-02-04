@@ -1,5 +1,8 @@
 # AFL Exercises
 
+[![Build Status](https://travis-ci.org/bratzelk/Checkout.svg?branch=master)](https://travis-ci.org/bratzelk/AFL-Exercises)
+
+
 ## Requirements
 
 * Java 1.8
