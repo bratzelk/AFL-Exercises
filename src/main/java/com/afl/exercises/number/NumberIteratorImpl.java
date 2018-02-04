@@ -1,5 +1,8 @@
 package com.afl.exercises.number;
 
+import static com.afl.constants.Constants.NUMBER_BAR;
+import static com.afl.constants.Constants.NUMBER_BAZ;
+import static com.afl.constants.Constants.NUMBER_FOO;
 import static java.util.stream.Collectors.toList;
 
 import java.util.List;
@@ -47,11 +50,11 @@ public class NumberIteratorImpl implements NumberIterator {
         if (number < 3) {
             result = Optional.empty();
         } else if (number % 3 == 0 && number % 5 == 0) {
-            result = Optional.of("BAZ");
+            result = Optional.of(NUMBER_BAZ);
         } else if (number % 3 == 0) {
-            result = Optional.of(number + "FOO");
+            result = Optional.of(number + NUMBER_FOO);
         } else if (number % 5 == 0) {
-            result = Optional.of(number + "BAR");
+            result = Optional.of(number + NUMBER_BAR);
         }
         return result;
     }
