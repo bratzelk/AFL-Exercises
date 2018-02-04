@@ -1,5 +1,7 @@
 package com.afl;
 
+import static com.afl.constants.Constants.EXERCISE_CHILDREN;
+import static com.afl.constants.Constants.EXERCISE_NUMBER;
 import static java.lang.Integer.parseInt;
 
 import org.slf4j.Logger;
@@ -31,12 +33,12 @@ public class Application {
     public static void run(ExerciseRunner runner, String[] args) {
         LOG.info("*** AFL Exercises Runner ***");
         try {
-            if ("children".equalsIgnoreCase(args[0])) {
+            if (EXERCISE_CHILDREN.equalsIgnoreCase(args[0])) {
                 LOG.info("*** Children's Game ***");
                 Integer n = parseInt(args[1]);
                 Integer k = parseInt(args[2]);
                 runner.runChildrenGame(n, k);
-            } else if ("number".equalsIgnoreCase(args[0])) {
+            } else if (EXERCISE_NUMBER.equalsIgnoreCase(args[0])) {
                 LOG.info("*** Number Iterator ***");
                 Integer limit = parseInt(args[1]);
                 runner.runNumberIterator(limit);

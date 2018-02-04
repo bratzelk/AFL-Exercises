@@ -11,6 +11,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import com.afl.constants.Constants;
+
 @RunWith(MockitoJUnitRunner.class)
 public class ApplicationTest {
 
@@ -30,7 +32,7 @@ public class ApplicationTest {
     @Test
     public void shouldRunChildrenGameWhenValidArgumentsPassedIn() {
         // Given
-        args[0] = "children";
+        args[0] = Constants.EXERCISE_CHILDREN;
         args[1] = "4";
         args[2] = "4";
 
@@ -42,7 +44,7 @@ public class ApplicationTest {
     @Test
     public void shouldRunNumberIteratorWhenValidArgumentsPassedIn() {
         // Given
-        args[0] = "number";
+        args[0] = Constants.EXERCISE_NUMBER;
         args[1] = "15";
 
         Application.run(runner, args);
